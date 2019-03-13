@@ -1,0 +1,24 @@
+<!--pages/movie/movie.wxml-->
+<form bindsubmit="search">
+  <input placeholder="请输入搜索的影视名" name="name"></input>
+  <button form-type="submit" size="mini">搜索</button>
+</form>
+<view>
+  <view>影片名:{{movie.title}}</view>
+  <view>简介:{{movie.desc}}</view>
+  <view>
+    <text>影视封面</text>
+    <image lazy-load="true" mode="widthFix" src="{{movie.cover}}"></image>
+  </view>
+  <block wx:for="{{movie.act_s}}">
+    <view>
+      <text>主演名:{{item.name}}</text>
+      <image lazy-load="true" mode="widthFix" src="{{item.image}}"></image>
+    </view>
+  </block>
+  <view>主要演员:{{movie.act}}</view>
+</view>
+
+<navigator url="{{url.h5url}}">h5链接</navigator>
+<navigator url="{{url.h5weixin}}">微信链接</navigator>
+<footer bindchooseTest="changeCurrent" chooseCurrent="{{current}}"></footer>

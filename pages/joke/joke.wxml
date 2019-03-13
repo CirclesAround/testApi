@@ -1,0 +1,5 @@
+<!--pages/joke/joke.wxml-->
+<block wx:for="{{jokeDaqo}}">
+  <view class="joke">{{item.content}}</view>
+</block>
+<footer bindchooseTest="changeCurrent" chooseCurrent="{{current}}"></footer>

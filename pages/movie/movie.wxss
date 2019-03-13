@@ -1,0 +1,13 @@
+/* pages/movie/movie.wxss */
+form {
+  display: block;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  padding: 0 20rpx;
+}
+input {
+  border: 1px solid #eee;
+  margin-bottom: 10rpx;
+  padding-left: 10rpx;
+  border-radius: 6rpx; 
+}

@@ -1,0 +1,10 @@
+<!--components/footer/footer.wxml-->
+<view class="navbar">
+  <block wx:for="{{footer}}">
+    <navigator url="{{item.url}}" class="navbar__item {{chooseCurrent===index?'current':''}}" data-index="{{index}}" hover-class='none' bindtap="changeNavbar" open-type="redirect">
+      <image class="navbar-img" src="{{item.img}}" wx:if="{{chooseCurrent===index}}"></image>
+      <image class="navbar-img" src="{{item.isImg}}" wx:else></image> 
+      <text class="navbar-text">{{item.text}}</text>
+    </navigator>
+  </block>
+</view>

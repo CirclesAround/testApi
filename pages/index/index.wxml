@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<text>测试</text>
+<view>
+  <view>{{movie.act}}</view>
+  <view>{{movie.desc}}</view>
+  <block wx:for="{{movie.act_s}}">
+    <view>
+      <text>{{item.name}}</text>
+      <image src="{{item.image}}"></image>
+    </view>
+  </block>
+</view>
+<view>
+  <text>{{constellation.date}}</text>
+  <text>{{constellation.name}}</text>
+  <text>{{constellation.love}}</text>
+  <text>{{constellation.money}}</text>
+  <text>{{constellation.work}}</text>
+  <text>{{constellation.health}}</text>
+</view>
+<button bindtap="obtainMovie">影视检索</button>
+<button bindtap="obtainConstellation">星座</button>
+<block wx:for="{{jokeDaqo}}">
+  <view class="joke">{{item.content}}</view>
+</block>
+<button bindtap="obtainJokeDaqo">笑话大全</button>
+<footer bindchooseTest="changeCurrent" chooseCurrent="{{current}}"></footer>

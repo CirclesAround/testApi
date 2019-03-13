@@ -1,0 +1,10 @@
+<!--pages/constellation/constellation.wxml-->
+<view>
+  <text>{{constellation.date}}</text>
+  <text>{{constellation.name}}</text>
+  <text>{{constellation.love}}</text>
+  <text>{{constellation.money}}</text>
+  <text>{{constellation.work}}</text>
+  <text>{{constellation.health}}</text>
+</view>
+<footer bindchooseTest="changeCurrent" chooseCurrent="{{current}}"></footer>
