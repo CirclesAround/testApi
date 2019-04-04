@@ -7,11 +7,30 @@ Page({
    */
   data: {
     constellation: {},
-    current: 0
+    current: 0,
+    keywords: '',
+    pages: 1,
+    list: []
   },
   changeCurrent: function (e) {
     this.setData({
       current: e.detail
+    })
+  },
+  searchKeywords: function (e) {
+    this.setData({
+      keywords: e.detail.value
+    })
+  },
+  formSubmit: function () {
+    let that = this
+    let keywords = that.data.keywords
+    let pages = that.data.pages
+    testApi.testMusic(keywords, pages,function (res) {
+      console.log(res)
+      that.setData({
+        list: res.showapi_res_body.pagebean.contentlist
+      })
     })
   },
   /**

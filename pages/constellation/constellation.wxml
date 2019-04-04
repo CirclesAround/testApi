@@ -1,4 +1,19 @@
 <!--pages/constellation/constellation.wxml-->
+<form bindsubmit="formSubmit" class="form">
+  <input class="text" placeholder="输入搜索的歌曲名或者人名" confirm-type="search" bindinput="searchKeywords"></input>
+  <button form-type="submit" size="mini">搜索</button>
+</form>
+<view class="list">
+  <block wx:for="{{list}}">
+    <view class="list-item">
+      <view>专辑昵称:{{item.albumname}}</view>
+      <image src="{{item.albumpic_big}}" mode="aspectFit"></image>
+      <view>{{item.singername}}</view>
+      <view>{{item.songname}}</view>
+    </view>
+  </block>
+</view>
+
 <view>
   <text>{{constellation.date}}</text>
   <text>{{constellation.name}}</text>

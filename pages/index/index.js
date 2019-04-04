@@ -4,43 +4,25 @@ const app = getApp()
 const testApi = require('indexApi.js')
 Page({
   data: {
-    movie: {},
-    constellation: {},
-    jokeDaqo: [],
-    pages: 1,
-    current: 0
-  },
-  obtainMovie () {
-    let that = this
-    testApi.test(function (res) {
-      console.log(res);
-      that.setData({
-        movie: res
-      })
-    })
-  },
-  obtainConstellation() {
-    let that = this
-    testApi.testConstellation(function(res) {
-      console.log(res)
-      that.setData({
-        constellation: res
-      })
-    })
-  },
-  obtainJokeDaqo () {
-    this.testCommon()
-  },
-  testCommon () {
-    let that = this
-    let pages = that.data.pages
-    testApi.testJokeDaquan(pages, function (res) {
-      that.data.jokeDaqo = that.data.jokeDaqo.concat(res)
-      console.log(that.data.jokeDaqo)
-      that.setData({
-        jokeDaqo: that.data.jokeDaqo
-      })
-    })
+    current: 0,
+    list: [
+      {
+        url: '../movie/movie',
+        text: '影视'
+      }, {
+        url: '../joke/joke',
+        text: '笑话大全'
+      }, {
+        url: '../constellation/constellation',
+        text: '星座'
+      }, {
+        url: '../index/index',
+        text: '我的'
+      }, {
+        url: '../test-header/test-header',
+        text: '自定义导航'
+      }
+    ]
   },
   changeCurrent: function (e) {
     this.setData({
@@ -48,14 +30,12 @@ Page({
     })
   },
   onLoad: function (options) {
-    this.setData({
-      current: options.current
-    })
+   let that = this
+   that.setData({
+     current: options.current
+   })
   },
   onReachBottom: function () {
-    this.setData({
-      pages: ++this.data.pages
-    })
-    this.testCommon()
+    
   }
 })

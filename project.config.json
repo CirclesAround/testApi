@@ -14,6 +14,8 @@
 	"libVersion": "2.6.2",
 	"appid": "touristappid",
 	"projectname": "testApi",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

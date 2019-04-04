@@ -2,15 +2,18 @@
   "pages": [
     "pages/movie/movie",
     "pages/index/index",
+    "pages/constellation/constellation",
     "pages/logs/logs",
     "components/footer/footer",
     "pages/joke/joke",
-    "pages/constellation/constellation"
+    "components/header/header",
+    "pages/test-header/test-header"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

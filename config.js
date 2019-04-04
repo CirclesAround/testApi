@@ -6,7 +6,8 @@ let config = {
     films: `${domain}//op.juhe.cn/onebox/movie/video`,   // 影视
     constellation: `${domain}//web.juhe.cn:8080/constellation/getAll`, // 星座
     jokeDaquan: `${domain}//v.juhe.cn/joke/content/list.php`, // 笑话
-    onlineMovie: `${domain}//v.juhe.cn/wepiao/query`
+    onlineMovie: `${domain}//v.juhe.cn/wepiao/query`,
+    music: `${domain}//route.showapi.com/213-1` // 音乐
   },
   // 获取接口的方法
   getAPI(key) {
