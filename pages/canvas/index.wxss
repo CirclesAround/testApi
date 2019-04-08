@@ -1,0 +1,12 @@
+/* pages/canvas/index.wxss */
+canvas{
+  margin: auto;
+  position: absolute;
+  top: -100vh;
+}
+image{
+  width: 300px;
+  height: 500px;
+  display: block;
+  margin: 40rpx auto;
+}

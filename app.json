@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/canvas/index",
+    "pages/recording/recording",
     "pages/movie/movie",
     "pages/index/index",
     "pages/constellation/constellation",

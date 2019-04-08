@@ -1,0 +1,4 @@
+<!--pages/recording/recording.wxml-->
+<button bindtap="recordingStart" size="mini">录音</button>
+<button bindtap="recordingContinue" size="mini">暂停</button>
+<button bindtap="playRecord" size="mini">播放录音</button>
