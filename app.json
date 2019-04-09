@@ -9,7 +9,8 @@
     "components/footer/footer",
     "pages/joke/joke",
     "components/header/header",
-    "pages/test-header/test-header"
+    "pages/test-header/test-header",
+    "pages/web-view/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

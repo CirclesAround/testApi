@@ -1,8 +1,11 @@
 /* pages/canvas/index.wxss */
-canvas{
+.test{
   margin: auto;
-  position: absolute;
-  top: -100vh;
+  position: fixed;
+  top: -200vh;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 image{
   width: 300px;

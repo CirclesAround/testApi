@@ -24,7 +24,7 @@ Page({
     let ctx = this.data.ctx;
     ctx = wx.createCanvasContext('firstCanvas');
     ctx.drawImage('../../image/img.jpg', 0, 0, 300, 500);
-    this.roundRect(ctx, 10, 15, 280, 90, 10);
+    this.roundRect(ctx, 10, 15, 280, 80, 10);
 
 
     // 文字
@@ -33,31 +33,31 @@ Page({
     let str = '踏上时间的列车往回忆边缘开穿过日升月落开往春去冬来我愿翻山越岭这一路风雨只为遇见你或许不完美却值得珍惜让故事继续';
     let day = '0';
     let data = '2019年04月08日';
-    that.drawText(ctx, time, 85, 60, 50, 100, '#000', 22, true);
-    that.drawText(ctx, text, 85, 85, 50, 260, '#000', 12, false);
-    that.drawText(ctx, str, 20, 420, 50, 260, '#333', 12, false); // 调用行文本换行函数
-    that.drawText(ctx, '坚持早起', 165, 40, 50, 50, '#333', 12, false);
-    that.drawText(ctx, day, 220, 40, 50, 100, '#333', 18, true);
-    that.drawText(ctx, '天', 260, 40, 50, 20, '#333', 12, false);
-    that.drawText(ctx, data, 165, 60, 50, 120, '#333', 10, false);
+    that.drawText(ctx, time, 85, 50, 50, 100, '#000', 22, true);
+    that.drawText(ctx, text, 85, 75, 50, 260, '#000', 10, false);
+    that.drawText(ctx, str, 20, 420, 50, 190, '#fff', 12, false); // 调用行文本换行函数
+    that.drawText(ctx, '坚持早起', 165, 36, 50, 50, '#fff', 12, false);
+    that.drawText(ctx, day, 220, 38, 50, 100, '#fff', 18, true);
+    that.drawText(ctx, '天', 260, 36, 50, 20, '#fff', 12, false);
+    that.drawText(ctx, data, 185, 55, 50, 120, '#fff', 10, false);
 
 
     // 绘制头像
     ctx.save();
     ctx.beginPath();
-    ctx.arc(50, 60, 30, 0, 2 * Math.PI);
-    ctx.setStrokeStyle('rgba(0, 0, 0, 0)');
+    ctx.arc(50, 55, 30, 0, 2 * Math.PI);
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0)';
     ctx.stroke();
     ctx.clip();
-    ctx.drawImage('../../image/1.png', 20, 30, 60, 60);
+    ctx.drawImage('../../image/1.png', 20, 25, 60, 60);
     // 恢复画布
     ctx.restore();
 
     // 坚持早起矩形背景
     ctx.save();
     ctx.beginPath();
-    ctx.rect(160, 20, 120, 45);
-    ctx.setFillStyle('rgba(0, 0, 0, .2)');
+    ctx.rect(160, 20, 120, 40);
+    ctx.fillStyle = 'rgba(0, 0, 0, .2)';
     ctx.fill();
 
     // 左下角的图片
@@ -68,22 +68,20 @@ Page({
 
     // canvas转化为图片
     ctx.draw(false, function() {
+      // console.log(wx.getSystemInfoSync())
       wx.canvasToTempFilePath({
-        x: 0,
-        y: 0,
-        width: 300,
-        height: 500,
-        destWidth: 300,
-        destHeight: 500,
+        // x: 0,
+        // y: 0,
+        // width: 300,
+        // height: 500,
+        // destWidth: 300 * wx.getSystemInfoSync().pixelRatio,
+        // destHeight: 500 * wx.getSystemInfoSync().pixelRatio,
         canvasId: 'firstCanvas',
+        quality: 1,
         success(res) {
           that.setData({
             imgSrc: res.tempFilePath
           })
-          // wx.previewImage({
-          //   current: res.tempFilePath, // 当前显示图片的http链接
-          //   urls: [res.tempFilePath] // 需要预览的图片http链接列表
-          // })
         }
       })
     })
@@ -107,7 +105,7 @@ Page({
       r = h / 2;
     }
     ctx.beginPath();
-    ctx.setFillStyle('rgba(255, 255, 255, .5)');
+    ctx.fillStyle = 'rgba(255, 255, 255, .5)';
     ctx.moveTo(x + r, y);
     ctx.arcTo(x + w, y, x + w, y + h, r);
     ctx.arcTo(x + w, y + h, x, y + h, r);
@@ -124,17 +122,18 @@ Page({
    * @param initHeight 距离顶部的距离
    * @param titleHeight 文本的高度
    * @param canvasWidth 文本的宽度
+   * @param fillStyle 字体颜色
    * @param setFontSize 文本大小
+   * @param bold 是否加粗
    * @returns {*}
    */
-  drawText: function(ctx, str, leftWidth, initHeight, titleHeight, canvasWidth, setFillStyle, setFontSize, bold) {
+  drawText: function (ctx, str, leftWidth, initHeight, titleHeight, canvasWidth, fillStyle, setFontSize, bold) {
     if (bold) {
       ctx.font = 'normal bold 20px sans-serif';
     } else {
       ctx.font = 'normal normal 12px sans-serif';
-      ctx.setTextAlign('left');
     }
-    ctx.setFillStyle(setFillStyle);
+    ctx.fillStyle = fillStyle;
     ctx.setFontSize(setFontSize);
 
     let lineWidth = 0;
