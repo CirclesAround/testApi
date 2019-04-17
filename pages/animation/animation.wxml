@@ -1,0 +1,23 @@
+<!--pages/animation/animation.wxml-->
+<view class="navbar">
+  <view class="navbar-item {{current===index?'current':''}}" wx:for="{{navbar}}" data-index="{{index}}" bindtap="change" wx:key="">{{item}}</view>
+</view>
+<view wx:if="{{current===0}}" animation="{{animation}}"  class="text">
+  <view class="list">
+    <view class="list-item" wx:for="{{list}}" data-index="{{index}}">
+      <view class="above">
+        <text class="title">{{item.title}}</text>
+        <text class="stick" bindtap="stick" data-index="{{index}}">{{!item.stick?'置顶':'取消置顶'}}</text>
+      </view>
+      <view class="following">
+        <text>{{item.nickName}}</text>
+        <text class="time">{{item.time}}</text>
+        <text>{{item.read}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="change" animation="{{animationData}}" wx:else="{{current===1}}">
+家客户SD卡就是拉咖技术大会按理说的拉会计师卡仕达卡上打卡机会
+</view>

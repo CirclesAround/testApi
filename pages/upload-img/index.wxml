@@ -1,0 +1,4 @@
+<!--pages/upload-img/index.wxml-->
+<view bindtap="upload" class="portrait">
+  <image src="{{srcImg}}"></image>
+</view>

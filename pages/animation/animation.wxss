@@ -1,0 +1,52 @@
+/* pages/animation/animation.wxss */
+.navbar{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+}
+.navbar-item{
+  flex: 1;
+  text-align: center;
+  font-size: 30rpx;
+  border-right: 1px solid #eee;
+}
+.navbar-item:last-child{
+  border-right: none; 
+}
+
+.text{
+  font-size: 28rpx;
+  color: #3a3a3a;
+  width: 100vw;
+}
+.change{
+  transform: translateX(100vw);
+  width: 100vw;
+}  
+.current{
+  color: #1296db;
+}
+.list{
+  margin: 0 20rpx;
+}
+.list-item{
+  padding: 20rpx 40rpx;
+  border: 1px solid #efefef;
+  border-radius: 6rpx;
+  margin-bottom: 10rpx;
+}
+.above,
+.following {
+  display: flex;
+  justify-content: space-between;
+}
+.title{
+  font-size: 34rpx;
+}
+.stick{
+  text-decoration: underline;
+}
+.time{
+  flex: 1;
+  padding: 0 20rpx;
+}

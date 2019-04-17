@@ -1,0 +1,32 @@
+/* pages/exchange/index.wxss */
+page {
+  background-color: #f7f7f7;
+}
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 128rpx;
+  z-index: 2;
+  background-color: #fff;
+}
+.navbar__item {
+  flex: 1;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #333;
+  font-size: 32rpx;
+}
+.current {
+  color: #1797eb;
+  border-bottom: 4rpx solid #1797eb;
+}
+.golb {
+  padding: 20rpx;
+}
+.golb__item {
+  margin: 10rpx 0;
+}
+.golb__item text {
+  margin-right: 20rpx;
+}

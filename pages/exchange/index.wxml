@@ -1,0 +1,25 @@
+<!--pages/exchange/index.wxml-->
+<header text="测试数据" back="true" home="true"></header>
+<view class="navbar">
+  <block wx:for="{{navbar}}" wx:key="">
+    <text class="navbar__item {{currentTab == index?'current':''}}" data-index="{{index}}" bindtap="change">{{item}}</text>
+  </block>
+</view>
+<view wx:if="{{currentTab==0}}">
+  <view wx:if="{{noData}}">暂无数据</view>
+  <view wx:else>净值数据</view>
+</view>
+<view wx:elif="{{currentTab==1}}">
+  <block wx:for="{{bookList}}" wx:key="">
+    <view id="{{item.id}}">{{item.catalog}}</view>
+  </block>
+</view>
+<view class="golb" wx:else>
+  <block wx:for="{{golbList}}" wx:key="">
+    <view class="golb__item">
+      <text>名字：{{item.variety}}</text>
+      <text>价格：{{item.yespri}}</text>
+      <text>时间:{{item.time}}</text>
+    </view>
+  </block>
+</view>

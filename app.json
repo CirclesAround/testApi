@@ -1,5 +1,10 @@
 {
   "pages": [
+    "pages/animation/animation",
+    "pages/exchange/index",
+    "pages/upload-img/index",
+    "pages/test-navbar/index",
+    "pages/texarea/index",
     "pages/canvas/index",
     "pages/recording/recording",
     "pages/movie/movie",
@@ -17,6 +22,30 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#3a3a3a",
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/animation/animation",
+        "text": "动画",
+        "iconPath": "image/earth.png",
+        "selectedIconPath": "image/earth-active.png"
+      },
+      {
+        "pagePath": "pages/upload-img/index",
+        "text": "上传图片",
+        "iconPath": "image/balance.png",
+        "selectedIconPath": "image/balance-active.png"
+      },
+      {
+        "pagePath": "pages/texarea/index",
+        "text": "文本",
+        "iconPath": "image/creative.png",
+        "selectedIconPath": "image/creative-active.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

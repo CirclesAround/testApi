@@ -1,0 +1,38 @@
+<!--pages/test-navbar/index.wxml-->
+<view class="content">
+  <!--头部tab切换部分start-->
+  <view class="menu">
+    <view class="{{currentTab==index?'select':'default'}}" wx:for="{{switchtab}}" wx:key='' data-current="{{index}}" catchtap="switchNav">{{item.name}}</view>
+  </view>
+  <view class="explain-box">
+    <text class="explain">使用说明</text>
+  </view>
+  <!--头部tab切换部分end-->
+  <!--切换内容部分start-->
+  <swiper current='{{currentTab}}' bindchange="tabChange" class='mySwiper'>
+    <block wx:for="{{coupons}}" wx:key="">
+      <swiper-item>
+        <block wx:for="{{item}}" wx:key="" wx:for-item="spItem">
+          <view class="item">
+            <view class="left">
+              <view class="left-top">
+                <text class="rmb">¥</text>
+                <text class="price">{{spItem.price}}</text>
+              </view>
+              <view class="left-bottom">
+                <text class="label">{{spItem.condition}}</text>
+              </view>
+            </view>
+            <view class="right">
+              <text class="item-1">{{spItem.goods}}</text>
+              <text class="item-2">优惠券描述</text>
+              <text class="item-3">{{spItem.way}}</text>
+              <text class="item-4">{{spItem.date}}</text>
+            </view>
+          </view>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--切换内容部分end-->
+</view>

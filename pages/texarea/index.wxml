@@ -1,0 +1,3 @@
+<!--pages/texarea/index.wxml-->
+<textarea placeholder="请输入文本内容" bindconfirm="obtain" maxlength="-1" auto-height="true"></textarea>
+<input placeholder="输入消息" bindconfirm="obtain" type="text" maxlength="-1" confirm-type="search"></input>
