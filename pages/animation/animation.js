@@ -11,52 +11,63 @@ Page({
     animation: {},
     hidden: true,
     list: [{
-      title: '花开那年',
-      stick: false,
-      nickName: '复杂人生',
-      time: '2019-04-16',
-      read: '22人已读'
-    }, {
-      title: '旅程',
-      stick: false,
-      nickName: '远intro',
-      time: '2019-04-16',
-      read: '2人已读'
-    }, {
-      title: '可惜没有如果',
-      stick: false,
-      nickName: 'JJ',
-      time: '2019-04-16',
-      read: '222人已读'
-    },
-    {
-      title: '藤蔓之间',
-      stick: false,
-      nickName: 'vision',
-      time: '2019-04-16',
-      read: '2人已读'
-    }, {
-      title: '复杂人生',
-      stick: false,
-      nickName: '威斯贝斯',
-      time: '2019-04-16',
-      read: '22人已读'
-    }, {
-      title: '八佰',
-      stick: false,
-      nickName: '电影',
-      time: '2019-04-16',
-      read: '222人已读'
-    }
-    ]
+        title: '花开那年',
+        stick: 0,
+        nickName: '复杂人生',
+        time: '2019-04-16',
+        read: '22人已读'
+      }, {
+        title: '旅程',
+        stick: 0,
+        nickName: '远intro',
+        time: '2019-04-16',
+        read: '2人已读'
+      }, {
+        title: '可惜没有如果',
+        stick: 0,
+        nickName: 'JJ',
+        time: '2019-04-16',
+        read: '222人已读'
+      },
+      {
+        title: '藤蔓之间',
+        stick: 0,
+        nickName: 'vision',
+        time: '2019-04-16',
+        read: '2人已读'
+      }, {
+        title: '复杂人生',
+        stick: 0,
+        nickName: '威斯贝斯',
+        time: '2019-04-16',
+        read: '22人已读'
+      }, {
+        title: '八佰',
+        stick: 0,
+        nickName: '电影',
+        time: '2019-04-16',
+        read: '222人已读'
+      }
+    ],
+    testIndex: 0,
+    testText: {}
   },
-  stick: function (e) {
+  stick: function(e) {
     let test = this.data.list
+    let arr = []
     let index = e.currentTarget.dataset.index
-    if (test[index].stick) {
-      test[index].stick = false
+    if (test[index].stick === 1) {
+      test[index].stick = 0
+      test.splice(test[index], 1)
+      console.log(this.data.testText)
+      
     } else {
-      test[index].stick = true
+      this.data.testIndex = index
+      this.data.testText = test[this.data.testIndex]
+      test[index].stick = 1
+      test.unshift(test.splice(index, 1)[0])
+      
+      console.log(this.data.testText)
     }
 
     this.setData({
@@ -67,11 +78,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
   // 页面切换动画
-  change: function (e) {
+  change: function(e) {
     if (this.data.current === e.currentTarget.dataset.index) {
       return false
     } else {
@@ -81,7 +92,7 @@ Page({
     }
 
     if (this.data.hidden && e.currentTarget.dataset.index === 1) {
-      setTimeout(function () {
+      setTimeout(function() {
         this.animationData.translateX(0).step({
           timingFunction: 'ease-in'
         })
@@ -95,7 +106,7 @@ Page({
         })
       }.bind(this), 100)
     } else {
-      setTimeout(function () {
+      setTimeout(function() {
         this.animationData.translateX('100vw').step({
           timingFunction: 'ease-in'
         })
@@ -113,49 +124,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
     this.animationData = wx.createAnimation();
     this.animation = wx.createAnimation();
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })
